@@ -17,9 +17,7 @@ import (
 // все данные о них - var histogramall [10][16][4]int
 
 func main() {
-	jpeg()
 	var k int = jpeg()
-	jpeg2()
 	var histogramall [][16][4]int
 	for i := 0; i < k; i++ {
 
@@ -48,7 +46,6 @@ func main() {
 		histogramall = append(histogramall, histogram)
 	}
 	// сравнивание данных изображений с базой
-	fmt.Println(1)
 	histogramall2 := main2()
 	var j int
 	var u int
@@ -61,18 +58,15 @@ func main() {
 			}
 		}
 		if f {
-			fmt.Println("Отпечаток " + strconv.Itoa(j) + " найден в базе данных")
+			fmt.Println("Отпечаток " + strconv.Itoa(j+1) + " найден в базе данных")
 		} else {
-			fmt.Println("Отпечаток " + strconv.Itoa(j) + " ненайден в базе данных")
+			fmt.Println("Отпечаток " + strconv.Itoa(j+1) + " ненайден в базе данных")
 		}
 	}
-	end := make(chan struct{})
-	<-end
 
 }
 
 func main2() [][16][4]int {
-	jpeg2()
 	var k int = jpeg2()
 	var histogramall [][16][4]int
 	for i := 0; i < k; i++ {
